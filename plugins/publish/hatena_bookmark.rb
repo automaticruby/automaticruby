@@ -2,7 +2,7 @@
 # Name::      Automatic::Plugin::Publish::HatenaBookmark
 # Author::    774 <http://id774.net>
 # Created::   Feb 22, 2012
-# Updated::   Mar  7, 2013
+# Updated::   Jul  9, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -26,8 +26,8 @@ module Automatic::Plugin
 
     def wsse(hatena_id, password)
       # Unique value
-      nonce = [Time.now.to_i.to_s].pack('m').gsub(/\n/, '')
-      now = Time.now.utc.iso8601
+      nonce = [Automatic.const_get(:DATETIME).to_i.to_s].pack('m').gsub(/\n/, '')
+      now = Automatic.const_get(:DATETIME).utc.iso8601
 
       # Base64 encoding for SHA1 Digested strings
       digest = [Digest::SHA1.digest(nonce + now + password)].pack("m").gsub(/\n/, '')

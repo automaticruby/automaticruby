@@ -2,7 +2,7 @@
 # Name::      Automatic::FeedParser
 # Author::    774 <http://id774.net>
 # Created::   Feb 19, 2012
-# Updated::   Jan  8, 2013
+# Updated::   Jul  9, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -46,7 +46,7 @@ module Automatic
                 item.description = feed.description
                 item.author = feed.author
                 item.comments = feed.comments
-                item.date = feed.pubDate || Time.now
+                item.date = feed.pubDate || Automatic.const_get(:DATETIME)
               rescue NoMethodError
                 Automatic::Log.puts("warn", "Undefined field detected in feed.")
               end
@@ -70,7 +70,7 @@ module Automatic
             item = maker.items.new_item
             item.title = "Automatic Ruby"
             item.link = link[:href]
-            item.date = Time.now
+            item.date = Automatic.const_get(:DATETIME)
             item.description = ""
           end
         }
