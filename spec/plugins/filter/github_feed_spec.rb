@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Name::      Automatic::Plugin::Filter::GithubFeed
 # Author::    Kohei Hasegawa <http://github.com/banyan>
-# Created::   Jun 6, 2013
-# Updated::   Jun 6, 2013
+# Created::   Jun  6, 2013
+# Updated::   Jul 10, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -36,18 +36,18 @@ describe Automatic::Plugin::FilterGithubFeed do
         subject.run
 
         subject.instance_variable_get(:@pipeline)[0].items[0].link
-          .should == '1'
+          .should == '0'
         subject.instance_variable_get(:@pipeline)[0].items[0].title
-          .should == 'title1'
+          .should == 'title0'
         subject.instance_variable_get(:@pipeline)[0].items[0].description
-          .should == 'description1'
+          .should == 'description0'
 
         subject.instance_variable_get(:@pipeline)[0].items[1].link
-          .should == '0'
+          .should == '1'
         subject.instance_variable_get(:@pipeline)[0].items[1].title
-          .should == 'title0'
+          .should == 'title1'
         subject.instance_variable_get(:@pipeline)[0].items[1].description
-          .should == 'description0'
+          .should == 'description1'
       }
     end
   end

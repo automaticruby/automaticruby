@@ -2,7 +2,7 @@
 # Name::      Automatic::Plugin::Publish::Fluentd
 # Author::    774 <http://id774.net>
 # Created::   Jun 21, 2013
-# Updated::   Jun 25, 2013
+# Updated::   Jul 10, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -23,12 +23,13 @@ module Automatic::Plugin
         unless feeds.nil?
           feeds.items.each {|feed|
             begin
+              Automatic::Log.puts("info", "Publish by tag #{@config['tag']} feed #{feed.link} to fluentd.")
               @fluentd.post(@config['tag'], {
                 :title => feed.title,
                 :link => feed.link,
                 :description => feed.description,
                 :content => feed.content_encoded,
-                :created_at => Time.now.strftime("%Y/%m/%d %X")
+                :created_at => Automatic.const_get(:DATETIME).strftime("%Y/%m/%d %X")
               })
             rescue
               Automatic::Log.puts("warn", "Skip feed due to fault in forward.")

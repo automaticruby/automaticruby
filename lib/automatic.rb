@@ -2,7 +2,7 @@
 # Name::      Automatic::Ruby
 # Author::    774 <http://id774.net>
 # Created::   Feb 18, 2012
-# Updated::   Jul  3, 2013
+# Updated::   Jul  9, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -15,6 +15,7 @@ module Automatic
 
   VERSION = "13.6.0-devel"
   USER_DIR = "/.automatic"
+  DATETIME = Time.now
 
   class << self
     attr_accessor :root_dir

@@ -3,7 +3,7 @@
 # Name::      Automatic::Plugin::Store::Permalink
 # Author::    774 <http://id774.net>
 # Created::   Feb 22, 2012
-# Updated::   Sep 18, 2012
+# Updated::   Jul  9, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -41,7 +41,7 @@ module Automatic::Plugin
         unless feed.link.nil?
           Permalink.create(
             :url => feed.link,
-            :created_at => Time.now.strftime("%Y/%m/%d %X"))
+            :created_at => Automatic.const_get(:DATETIME).strftime("%Y/%m/%d %X"))
           Automatic::Log.puts("info", "Saving: #{feed.link}")
         end
       }

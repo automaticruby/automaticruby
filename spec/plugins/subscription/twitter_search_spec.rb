@@ -2,7 +2,7 @@
 # Name::      Automatic::Plugin::Subscription::TwitterSearch
 # Author::    soramugi <http://soramugi.net>
 # Created::   May 30, 2013
-# Updated::   May 30, 2013
+# Updated::   Jul  9, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
@@ -41,7 +41,7 @@ describe 'Automatic::Plugin::SubscriptionTwitterSearch' do
         status.user       = {'screen_name' => 'soramugi'}
         status.id         = 12345
         status.text       = 'twitter_search rspec'
-        status.created_at = Time.now
+        status.created_at = Automatic.const_get(:DATETIME)
         search         = Hashie::Mash.new
         search.results = [status]
         client = mock("client")
