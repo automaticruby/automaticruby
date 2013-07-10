@@ -23,7 +23,7 @@ module Automatic::Plugin
         unless feeds.nil?
           feeds.items.each {|feed|
             begin
-              Automatic::Log.puts("info", "Publish by tag #{@config['tag']} feed #{feed.link} to fluentd ")
+              Automatic::Log.puts("info", "Publish by tag #{@config['tag']} feed #{feed.link} to fluentd.")
               @fluentd.post(@config['tag'], {
                 :title => feed.title,
                 :link => feed.link,
