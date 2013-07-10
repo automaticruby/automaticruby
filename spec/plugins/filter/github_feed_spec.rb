@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Name::      Automatic::Plugin::Filter::GithubFeed
 # Author::    Kohei Hasegawa <http://github.com/banyan>
-# Created::   Jun 6, 2013
-# Updated::   Jun 6, 2013
+# Created::   Jun  6, 2013
+# Updated::   Jul 10, 2013
 # Copyright:: Copyright (c) 2012-2013 Automatic Ruby Developers.
 # License::   Licensed under the GNU GENERAL PUBLIC LICENSE, Version 3.0.
 
