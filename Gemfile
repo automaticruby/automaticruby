@@ -21,7 +21,7 @@ gem 'fluent-logger'
 gem 'dalli'
 
 group :test do
-  gem 'rspec'
+  gem 'rspec', '~>2.14.1'
   gem 'rcov', :platforms => :mri_18
   gem 'simplecov'
   gem 'simplecov-rcov'
