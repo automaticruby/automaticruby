@@ -1,3 +1,7 @@
+> [!NOTE]
+> This repository is a historical archive of Automatic Ruby development through 2015.
+> Active development continues in [`id774/automaticruby`](https://github.com/id774/automaticruby).
+
 Automatic Ruby
 ==============
 
